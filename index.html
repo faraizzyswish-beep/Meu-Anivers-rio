@@ -107,159 +107,43 @@
             }
         }
 
-        /* --- MENUS NO CANTO SUPERIOR ESQUERDO --- */
-        .top-left-menu {
-            position: fixed;
-            top: 15px;
-            left: 15px;
-            z-index: 10;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .menu-btn {
-            background: rgba(20, 20, 20, 0.85);
-            border: 1px solid #d4af37;
-            color: #f3e5ab;
-            padding: 8px 12px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            transition: 0.3s;
-        }
-
-        .menu-btn:hover {
-            background: #d4af37;
-            color: #111;
-        }
-
-        /* --- JANELAS MODAIS (POPUP) --- */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            z-index: 20;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: rgba(20, 20, 20, 0.95);
-            border: 1px solid #d4af37;
-            border-radius: 20px;
-            padding: 25px 20px;
-            width: 100%;
-            max-width: 400px;
-            color: #ffffff;
-            text-align: center;
+        /* --- AVISO DE CANCELADO (NO MEIO DO SITE) --- */
+        .canceled-banner {
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+            z-index: 5;
+            text-align: center;
+            background: rgba(30, 0, 0, 0.85);
+            border: 2px solid #ff0000;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+            max-width: 90%;
+            width: 480px;
+            margin: 10px 0;
         }
 
-        .modal-content h2 {
-            color: #f3e5ab;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding-bottom: 10px;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: #d4af37;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .info-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 10px;
-            text-align: left;
-            max-height: 220px;
-            overflow-y: auto;
-        }
-
-        .info-list li {
-            padding: 8px 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-        }
-
-        .total-count {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #d4af37;
-            font-size: 0.95rem;
-        }
-
-        /* --- FORMULÁRIO DE MENSAGENS E BRINDES --- */
-        .form-group {
-            margin-bottom: 12px;
-            text-align: left;
-        }
-
-        .form-group label {
+        .canceled-icon {
+            font-size: 4rem;
             display: block;
-            font-size: 0.8rem;
-            color: #d4af37;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
+            animation: pulseWarning 1.5s infinite alternate;
+        }
+
+        .canceled-text {
+            color: #ff0000;
+            font-size: 2.5rem;
+            font-weight: 900;
             text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 2px 2px 4px #000;
         }
 
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #d4af37;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            font-size: 0.85rem;
-            outline: none;
+        @keyframes pulseWarning {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
         }
 
-        .form-group textarea {
-            resize: vertical;
-            height: 80px;
-        }
-
-        .btn-send {
-            width: 100%;
-            padding: 10px;
-            background: #d4af37;
-            color: #111;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            margin-top: 5px;
-        }
-
-        .btn-send:hover {
-            background: #f3e5ab;
-        }
-
-        /* --- ESTRUTURA ORIGINAL --- */
+        /* --- ESTRUTURA PRINCIPAL --- */
         .container {
             position: relative;
             z-index: 5;
@@ -289,29 +173,6 @@
             gap: 10px;
         }
 
-        .Convite {
-            position: relative;
-            z-index: 5;
-            text-align: center;
-            color: #ffffff;
-            padding: 25px 20px;
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid rgba(212, 175, 55, 0.5);
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
-            max-width: 90%;
-            width: 480px;
-        }
-
-        .Convite h1 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #f3e5ab;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-        }
-
         .box {
             background: rgba(0, 0, 0, 0.75);
             border: 1px solid #d4af37;
@@ -336,53 +197,12 @@
             letter-spacing: 1px;
         }
 
-        .location-box {
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        .btn-location {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #d4af37;
-            color: #111;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-
-        .btn-location:hover {
-            background: #f3e5ab;
-        }
-
-        .waiting-text {
-            color: #ffffff;
-            font-size: 1.1rem;
-            font-weight: bold;
-            letter-spacing: 1.5px;
-            margin-top: 15px;
-            text-transform: uppercase;
-        }
-
-        .obs-text {
-            color: #d4af37;
-            font-size: 0.75rem;
-            margin-top: 8px;
-            font-style: italic;
-            letter-spacing: 0.5px;
-        }
-
         @media (max-width: 480px) {
             h1 { font-size: 1.3rem; }
-            .Convite h1 { font-size: 1.1rem; }
             .number { font-size: 1.5rem; }
             .label { font-size: 0.65rem; }
-            .waiting-text { font-size: 0.95rem; }
-            .obs-text { font-size: 0.65rem; }
+            .canceled-icon { font-size: 3rem; }
+            .canceled-text { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -395,61 +215,6 @@
 
     <!-- CONTAINER PARA OS BALÕES -->
     <div class="balloon-container" id="balloonContainer"></div>
-
-    <!-- MENUS CANTO SUPERIOR ESQUERDO -->
-    <div class="top-left-menu">
-        <button class="menu-btn" onclick="openModal('modalPessoas')">👥 Pessoas</button>
-        <button class="menu-btn" onclick="openModal('modalBebidas')">🍹 Bebidas</button>
-        <button class="menu-btn" onclick="openModal('modalMensagens')">✉️ Recados / Brindes</button>
-    </div>
-
-    <!-- JANELA MODAL: PESSOAS CONFIRMADAS -->
-    <div id="modalPessoas" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modalPessoas')">&times;</span>
-            <h2>Presenças Confirmadas</h2>
-            <ul class="info-list">
-                <li><span>Amigo 7</span> <span>✔ Confirmado</span></li>
-                <li><span>Amigas 4</span> <span>✔ Confirmado</span></li>
-            </ul>
-            <div class="total-count">Total Confirmados: 2</div>
-        </div>
-    </div>
-
-    <!-- JANELA MODAL: BEBIDAS -->
-    <div id="modalBebidas" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modalBebidas')">&times;</span>
-            <h2>Lista de Bebidas</h2>
-            <ul class="info-list">
-                <li><span>Cerveja Cuca</span> <span>4 Caixas</span></li>
-                <li><span>Refrigerante</span> <span>1 Caixa</span></li>
-                <li><span>Whisky / Liqueur</span> <span>3 Garrafas</span></li>
-            </ul>
-            <div class="total-count">Disponíveis no Local</div>
-        </div>
-    </div>
-
-    <!-- JANELA MODAL: MENSAGENS E BRINDES (PRIVADO) -->
-    <div id="modalMensagens" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modalMensagens')">&times;</span>
-            <h2>Deixar Mensagem / Brinde</h2>
-            <p style="font-size: 0.75rem; color: #ccc; margin-bottom: 12px;">Sua mensagem será enviada de forma privada.</p>
-            
-            <form action="https://formsubmit.co/domingosaugustokibata@outlook.com" method="POST">
-                <div class="form-group">
-                    <label>Seu Nome</label>
-                    <input type="text" name="nome" placeholder="Digite seu nome" required>
-                </div>
-                <div class="form-group">
-                    <label>Mensagem ou Brinde</label>
-                    <textarea name="mensagem" placeholder="Escreva aqui seu recado ou brinde..." required></textarea>
-                </div>
-                <button type="submit" class="btn-send">Enviar Privadamente</button>
-            </form>
-        </div>
-    </div>
 
     <div class="container">
         <h1>Faltam para o meu aniversário</h1>
@@ -473,33 +238,13 @@
         </div>
     </div>
 
-    <div class="Convite">
-        <h1>VOCÊ É O MEU CONVIDADO ESPECIAL</h1>
-        
-        <div class="location-box">
-            <a href="#" target="_blank" class="btn-location">📍 Ver Localização</a>
-        </div>
-
-        <div class="waiting-text">ESTAREI ESPERANDO POR VOCÊ!</div>
-        <div class="obs-text">OBS: ISSO NÃO É UMA FESTA, MAS VAMOS FAZER PARECER UMA.</div>
+    <!-- BANNER DE CANCELADO NO MEIO DO SITE -->
+    <div class="canceled-banner">
+        <span class="canceled-icon">⚠️</span>
+        <div class="canceled-text">CANCELADO</div>
     </div>
 
     <script>
-        // --- MODAIS ---
-        function openModal(id) {
-            document.getElementById(id).style.display = 'flex';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        }
-
         // --- CONTAGEM REGRESSIVA ---
         const targetDate = new Date(2026, 9, 19, 0, 0, 0).getTime();
 
@@ -536,9 +281,9 @@
             balloon.className = 'balloon';
             
             const randomColor = balloonColors[Math.floor(Math.random() * balloonColors.length)];
-            const randomLeft = Math.random() * 90 + 5; // Posição horizontal (5% a 95%)
-            const randomDuration = Math.random() * 6 + 6; // Duração entre 6s e 12s
-            const randomSize = Math.random() * 15 + 35; // Tamanho entre 35px e 50px
+            const randomLeft = Math.random() * 90 + 5;
+            const randomDuration = Math.random() * 6 + 6;
+            const randomSize = Math.random() * 15 + 35;
 
             balloon.style.backgroundColor = randomColor;
             balloon.style.left = randomLeft + 'vw';
@@ -548,13 +293,11 @@
 
             balloonContainer.appendChild(balloon);
 
-            // Remover o balão após o término da animação
             setTimeout(() => {
                 balloon.remove();
             }, randomDuration * 1000);
         }
 
-        // Criar balões em intervalos regulares
         setInterval(createBalloon, 800);
 
         // --- ANIMAÇÃO DE FOGOS DE ARTIFÍCIO ---
@@ -634,8 +377,7 @@
             requestAnimationFrame(animateFireworks);
         }
 
-        // Lançar fogos continuamente
-        setInterval(createFirework, 1500);
+        setInterval(createFirework, 1200);
         animateFireworks();
     </script>
 </body>
